@@ -6,6 +6,9 @@ import argparse
 import os
 import sys
 import shutil
+import pathlib
+
+scriptDir = pathlib.Path(__file__).parent.absolute()
 
 # vai pro diretório do script
 # https://stackoverflow.com/a/509754
@@ -28,7 +31,7 @@ if args.update:
     sys.exit(0)
 
 if args.start:
-    os.startfile("C:/dev/tvleo/TeamViewerPortable/TeamViewer.exe")
+    os.startfile(str(scriptDir / 'TeamViewerPortable' / "TeamViewer.exe"))
     sys.exit(0)
 
 os.startfile('tvleo.au3')
